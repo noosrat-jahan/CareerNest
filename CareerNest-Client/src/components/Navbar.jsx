@@ -13,13 +13,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+
 const Navbar = () => {
   return (
-    <div className="w-11/12 mx-auto flex items-center justify-between">
-      <NavigationMenu viewport={false} className="max-w-full shadow-md">
+    <div className="w-full px-4 mx-auto shadow-md sticky top-0 bg-background  flex items-center justify-between">
+      <NavigationMenu viewport={false} className="max-w-full gap-5 justify-between">
         {/* logo  */}
-        <Link to="/" className="">
-          <img src={logo} alt="CareerNest" className="w-1/5" />
+        <Link to="/" className="w-1/4">
+          <img src={logo} alt="CareerNest" className="w-1/4" />
         </Link>
         <NavigationMenuList>
           <NavigationMenuItem>
