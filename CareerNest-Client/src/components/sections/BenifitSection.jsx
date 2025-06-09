@@ -28,7 +28,7 @@ const BenifitSection = () => {
     <div className="mt-14">
       <section className="py-16 bg-muted dark:bg-background">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Why CareerNest?</h2>
+          <h2 className="text-5xl font-bold mb-6">Why CareerNest?</h2>
           <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">
             We help you stay organized and prepared during your career journey.
           </p>
