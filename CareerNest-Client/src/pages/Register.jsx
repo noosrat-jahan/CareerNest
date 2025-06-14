@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "@/Provider/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Register = () => {
   const { setUser, createUser, googleSignIn } = useContext(AuthContext);
@@ -25,14 +26,27 @@ const Register = () => {
       const users = result.user;
       console.log(users);
       setUser(users);
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Signed up successfully",
-        showConfirmButton: false,
-        timer: 3000,
+
+      const userData = {
+        Name: data.fname +' '+ data.lname,
+        Email: data.email,
+        Photo: data.photo,
+        Role: "student",
+      };
+
+      axios.post("https://career-nest-server-one.vercel.app/users", userData).then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Signed up successfully",
+            showConfirmButton: false,
+            timer: 3000,
+          });
+          navigate("/dashboard");
+        }
       });
-      navigate("/dashboard");
     });
   };
 
@@ -41,14 +55,27 @@ const Register = () => {
       const users = result.user;
       console.log(users);
       setUser(users);
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Signed up with google successfully",
-        showConfirmButton: false,
-        timer: 3000,
+
+      const userData = {
+        Name: users.displayName,
+        Email: users.email,
+        Photo: users.photoURL,
+        Role: "student",
+      };
+
+      axios.post("https://career-nest-server-one.vercel.app/users", userData).then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Signed up with google successfully",
+            showConfirmButton: false,
+            timer: 3000,
+          });
+          navigate("/dashboard");
+        }
       });
-      navigate("/dashboard");
     });
   };
 
@@ -127,6 +154,21 @@ const Register = () => {
           {errors.password && (
             <p className="text-red-700 text-sm">{errors.password.message}</p>
           )}
+
+          {/* photo url field  */}
+          {/* register your input into the hook by invoking the "register" function */}
+          <Label htmlFor="photo">PhotoUrl</Label>
+          <Input
+            defaultValue=""
+            {...register("photo")}
+            type="text"
+            id="photo"
+            placeholder="Your Photo"
+            className="my-3"
+          />
+          {/* {errors.photo && (
+            <p className="text-red-700 text-sm">First Name is required</p>
+          )} */}
 
           <input
             type="submit"
