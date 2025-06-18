@@ -31,10 +31,15 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, provider);
   };
 
-  const logOutUser = ()=>{
+  const updateUser = (updatedprofileInfo) => {
+    setLoading(true);
+    return updateProfile(auth.currentUser, updatedprofileInfo);
+  };
+
+  const logOutUser = () => {
     setLoading(false);
-    return signOut(auth)
-  }
+    return signOut(auth);
+  };
 
   const authInfo = {
     user,
@@ -43,7 +48,8 @@ const AuthProvider = ({ children }) => {
     createUser,
     googleSignIn,
     loginUser,
-    logOutUser
+    logOutUser,
+    updateUser
   };
 
   useEffect(() => {

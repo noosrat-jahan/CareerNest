@@ -11,10 +11,10 @@ const BenifitSection = () => {
         "Manage your applications and keep track of your job search progress with ease.",
     },
     {
-      title: "Build Portfolio",
+      title: "Build Resume",
       icon: <FolderKanban className="h-10 w-10 text-primary" />,
       description:
-        "Showcase your best work and create a personalized portfolio to impress recruiters.",
+        "Showcase your best work and create a personalized resume to impress recruiters.",
     },
     {
       title: "Keep Notes",

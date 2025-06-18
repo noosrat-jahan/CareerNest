@@ -9,7 +9,7 @@ const DashboardLayout = () => {
   console.log(isAdmin);
 
   if (isAdminLoading) {
-    return "Loading";
+    return "Loading...."
   }
   return (
     <div>

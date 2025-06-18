@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className=" m-3 mt-10 flex justify-around gap-6 ">
+    <div className="p-3 pt-10 flex  justify-around gap-6 bg-gradient-to-br from-white via-blue-50 to-purple-100">
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

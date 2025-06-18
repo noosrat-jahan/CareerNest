@@ -43,7 +43,7 @@ const Navbar = () => {
     });
   };
   return (
-    <div className="w-full z-10 px-4 mx-auto shadow-md sticky top-0 bg-background  flex items-center justify-between">
+    <div className="w-full z-10 px-4 mx-auto shadow-sm sticky top-0 bg-background  flex items-center justify-between">
       <NavigationMenu
         viewport={false}
         className="max-w-full gap-5 justify-between"
@@ -116,7 +116,7 @@ const Navbar = () => {
               <li className="justify-between">
                 <Link to="/profile">
                   Profile
-                  <span className="badge px-2">{person.Role}</span>
+                  <span className="badge px-2">{person.role}</span>
                 </Link>
               </li>
               <li>

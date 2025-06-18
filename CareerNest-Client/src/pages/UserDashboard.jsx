@@ -6,6 +6,7 @@ import { AiTwotoneSave } from "react-icons/ai";
 import { TbFileCv } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 const UserDashboard = () => {
   const { user } = useContext(AuthContext);
@@ -23,10 +24,10 @@ const UserDashboard = () => {
     <div>
       <div className="mt-10 px-10 rounded-sm">
         <h1 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-sky-500 to-pink-500 text-transparent bg-clip-text drop-shadow-lg">
-          Welcome, {person.Name}{" "}
+          Welcome, {person.name}{" "}
         </h1>
 
-        <div className="bg-accent my-5 p-10 grid grid-cols-3 gap-5">
+        <div className="bg-accent my-10 p-20 grid grid-cols-3 gap-5">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,6 +70,8 @@ const UserDashboard = () => {
             </Link>
           </motion.div>
         </div>
+
+        <Footer></Footer>
       </div>
     </div>
   );

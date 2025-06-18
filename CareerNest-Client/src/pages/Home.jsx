@@ -2,7 +2,7 @@ import BenifitSection from '@/components/sections/BenifitSection';
 import Faq from '@/components/sections/Faq';
 import Hero from '@/components/sections/Hero';
 import React from 'react';
-import Reviews from './Reviews';
+import Reviews from '@/components/sections/Reviews';
 
 const Home = () => {
     return (

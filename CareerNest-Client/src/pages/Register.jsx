@@ -28,10 +28,10 @@ const Register = () => {
       setUser(users);
 
       const userData = {
-        Name: data.fname +' '+ data.lname,
-        Email: data.email,
-        Photo: data.photo,
-        Role: "student",
+        name: data.fname +' '+ data.lname,
+        email: data.email,
+        photo: data.photo,
+        role: "student",
       };
 
       axios.post("https://career-nest-server-one.vercel.app/users", userData).then((res) => {
@@ -57,10 +57,10 @@ const Register = () => {
       setUser(users);
 
       const userData = {
-        Name: users.displayName,
-        Email: users.email,
-        Photo: users.photoURL,
-        Role: "student",
+        name: users.displayName,
+        email: users.email,
+        photo: users.photoURL,
+        role: "student",
       };
 
       axios.post("https://career-nest-server-one.vercel.app/users", userData).then((res) => {
