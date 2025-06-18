@@ -35,7 +35,7 @@ async function run() {
 
     app.get('/users/:email', async(req, res)=>{
       const email = req.params.email 
-      const query = {Email: email}
+      const query = {email: email}
       const result = await userCollection.findOne(query)
       res.send(result)
     })
@@ -57,6 +57,7 @@ async function run() {
       const email = req.params.email  
       const query = {email: email}
       const user = await userCollection.findOne(query)
+      console.log(user)
       let isAdmin = false 
       if(user){
         isAdmin = user?.role === "admin"
